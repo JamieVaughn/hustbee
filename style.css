@@ -1,0 +1,118 @@
+:root {
+  --main: #111a2b;
+}
+
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Nav styles */
+header h1 {
+  margin: 0 1rem;
+}
+nav, main {
+  background: var(--main);
+  color: white;
+}
+
+.flex {
+  display: flex;
+}
+.center {
+  align-items: center;
+}
+nav {
+  padding: 1rem;
+}
+ul {
+  list-style: none;
+  color: white;
+  width: 100%;
+}
+ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+}
+ul li:first-child {
+  margin-left: auto;
+}
+/* Hero section styles */
+.hero {
+  padding: 8rem 0;
+}
+.card {
+  display: flex;
+  margin: 0 2rem 4rem;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.3em;
+}
+.col {
+  flex-direction: column;
+}
+.card img {
+  max-width: 40%;
+  border-radius: 3rem;
+  min-width: 300px;
+  max-height: 150px;
+}
+.card .text {
+  flex-shrink: 2;
+}
+
+.button {
+  background: var(--main);
+  padding: 12px;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 24px;
+  max-width: 180px;
+  text-align: center;
+}
+
+.hero-btn {
+  background: gold;
+  color: var(--main);
+  font-size: 1.25rem;
+}
+
+
+/* Projects cards styles */
+.projects {
+  background: #fbfbfb;
+  color: var(--main);
+  padding: 2rem 0;
+}
+.projects h2 {
+  text-align: center;
+}
+.proj-btn {
+  color: #a3a3a3;
+  min-width: 200px;
+}
+.proj-btn:hover {
+  background: gold;
+}
+
+
+
+
+/* Products Cards Styles */
+.products {
+  background: white;
+}
+.posts {
+  background: #eaf2fe;
+}
+
+.contact {
+  background: #5993fa;;
+}
+
+footer {
+  background: var(--main);
+}
