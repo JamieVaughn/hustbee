@@ -1,12 +1,31 @@
 :root {
   --main: #111a2b;
+  --gold: #ffc600;
+  --slate: #365386;
 }
-
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
+/* Utility */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.between {
+  justify-content: space-between;
+}
+.center {
+  align-items: center;
+}
+.large {
+  font-size: 1.6em;
+}
+
 
 /* Nav styles */
 header h1 {
@@ -15,13 +34,6 @@ header h1 {
 nav, main {
   background: var(--main);
   color: white;
-}
-
-.flex {
-  display: flex;
-}
-.center {
-  align-items: center;
 }
 nav {
   padding: 1rem;
@@ -36,7 +48,7 @@ ul li a {
   text-decoration: none;
   padding: 1rem;
 }
-ul li:first-child {
+nav ul li:first-child {
   margin-left: auto;
 }
 /* Hero section styles */
@@ -75,7 +87,7 @@ ul li:first-child {
 }
 
 .hero-btn {
-  background: gold;
+  background: var(--gold);
   color: var(--main);
   font-size: 1.25rem;
 }
@@ -90,9 +102,18 @@ ul li:first-child {
 .projects h2 {
   text-align: center;
 }
+.projects .card h3 {
+  font-size: 2rem;
+}
+.projects .card p {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  font-weight: 300;
+}
 .proj-btn {
   color: #a3a3a3;
   min-width: 200px;
+  padding: 12px 2rem;
 }
 .proj-btn:hover {
   background: gold;
@@ -100,19 +121,206 @@ ul li:first-child {
 
 
 
-
 /* Products Cards Styles */
 .products {
   background: white;
+  color: var(--main);
+  padding: 2rem 8rem;
 }
+.products h2 {
+  text-align: center;
+}
+.prices {
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.price-card {
+  border: 1px solid royalblue;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 300;
+  flex: 1 1 45%;
+  margin: 2px;
+  transition: border 300ms, margin 300ms;
+}
+.price-card:hover {
+  border: 3px solid royalblue;
+  margin: 0;
+}
+.price-card h3 {
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.price-card:hover h3 {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+.price-card ul {
+  padding: 0;
+}
+.price-card p.small {
+  margin: 0;
+}
+.price-card p.large {
+  margin-top: 0;
+}
+.price-card a {
+  padding: 12px 2rem;
+  background-color: royalblue;
+}
+.blue {
+  color: royalblue;
+}
+.products li {
+  color: var(--main);
+  padding: 6px;
+  margin: 0 1rem;
+  border: 1px solid transparent;
+  position: relative;
+}
+.products li::before {
+  content: '✓';
+  color: goldenrod;
+  position: absolute;
+  transform: translateX(-1rem);
+}
+.products li:hover {
+  border: 1px solid var(--main);
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+.products li:hover::before {
+  color: var(--main);
+}
+
+
+
+/* Post styles */
 .posts {
   background: #eaf2fe;
+  padding: 2rem 8rem;
+  color: var(--main)
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 250px 250px;
+  grid-gap: 2rem;
+}
+.grid > * {
+  padding: 1rem;
+  border-radius: 1rem;;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: start;
+}
+/* .grid span {
+  display: block;
+  margin-top: 100px;
+} */
+.primary {
+  background-color: royalblue;
+}
+.secondary {
+  background-color: var(--gold);
+}
+.dark {
+  background-color: var(--main);
+  color: white;
+}
+.wide {
+  grid-column: 1  / -1;
+}
+.posts-card {
+  color: white;
+}
+.pill {
+  padding: 4px 10px;
+  text-transform: capitalize;
+  border-radius: 3px;
+  color: white;
+  text-align: center;
+}
+.red {
+  background-color: red;
+}
+.sky {
+  background-color: skyblue;
+}
+.slate {
+  background-color: var(--slate);
+}
+.post-btn {
+  background-color: #f1f1f1;
+  color: var(--main);
+  font-size: 14px;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
+
+/* contact styles */ 
 .contact {
-  background: #5993fa;;
+  background: #5993fa;
+  padding: 2rem 8rem;
+}
+.contact form {
+  justify-content: flex-start;
+}
+.contact input {
+  border-radius: 2rem;
+  padding: 0.75rem 4rem;
+  font-size: 1.5rem;
+  color: royalblue;
+  border: none;
+  width: 100%;
+}
+.contact input::placeholder {
+  color: grey;
+}
+.contact button {
+  background-color: var(--slate);
+  color: white;
+  margin-left: auto;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.75rem 4rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.contact button:hover {
+  filter: brightness(0.85);
+}
+@media screen and (max-width: 600px) {
+  .contact {
+    padding: 2rem
+  }
+  .contact form > * {
+    width: 100%;
+  }
 }
 
+
+/* footer styles */
 footer {
   background: var(--main);
+  padding: 2rem 8rem;
+}
+.social-icons {
+  justify-content: center;
+}
+.social-icons img {
+  width: 32px;
+  margin: 0 32px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 100%;
+}
+.social-icons a, .credits a {
+  padding: 0;
 }
