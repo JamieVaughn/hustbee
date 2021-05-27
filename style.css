@@ -6,7 +6,9 @@
 * {
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -26,6 +28,18 @@ body {
   font-size: 1.6em;
 }
 
+/* Optional Tab System Styles */
+/* Alternative page layout with tab system: https://codepen.io/heliocrat/pen/RwpGLZb?editors=1100 */
+article, section {
+  display: none;
+  min-height: 70vh;
+}
+article:target, section:target {
+  display: block
+}
+article#about {
+  display: block;
+}
 
 /* Nav styles */
 header h1 {
@@ -66,10 +80,10 @@ nav ul li:first-child {
   flex-direction: column;
 }
 .card img {
-  max-width: 40%;
   border-radius: 3rem;
-  min-width: 300px;
-  max-height: 150px;
+  max-width: 50%;
+  height: 350px;
+  object-fit: cover;
 }
 .card .text {
   flex-shrink: 2;
@@ -82,7 +96,7 @@ nav ul li:first-child {
   color: white;
   text-decoration: none;
   border-radius: 24px;
-  max-width: 180px;
+  max-width: 250px;
   text-align: center;
 }
 
@@ -90,6 +104,7 @@ nav ul li:first-child {
   background: var(--gold);
   color: var(--main);
   font-size: 1.25rem;
+  white-space: nowrap;
 }
 
 
@@ -270,6 +285,10 @@ nav ul li:first-child {
 }
 .contact form {
   justify-content: flex-start;
+  gap: 2rem;
+}
+.contact label {
+  flex-grow: 1;
 }
 .contact input {
   border-radius: 2rem;
