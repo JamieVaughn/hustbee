@@ -30,7 +30,7 @@ body {
 
 /* Optional Tab System Styles */
 /* Alternative page layout with tab system: https://codepen.io/heliocrat/pen/RwpGLZb?editors=1100 */
-article, section {
+/* article, section {
   display: none;
   min-height: 70vh;
 }
@@ -39,7 +39,7 @@ article:target, section:target {
 }
 article#about {
   display: block;
-}
+} */
 
 /* Nav styles */
 header h1 {
